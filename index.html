@@ -273,16 +273,12 @@
             </div>
         </div>
 
-        <!--  <!-- Schedule and Registration Block -->
+        <!-- Schedule and Registration Block -->
         <div class="grid lg:grid-cols-2 gap-10 items-stretch mb-20 max-w-6xl mx-auto">
             
-            <!-- Schedule Image Placeholder -->
-            <div class="relative w-full h-full min-h-[400px] bg-white rounded-[2rem] border border-[#a68a69]/20 overflow-hidden shadow-sm group">
-                <!-- Updated src to point directly to your uploaded schedule image file -->
-                <img src="schedule-placeholder.png" alt="Training Schedule" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
-                <div class="absolute inset-0 bg-gradient-to-t from-[#48596b]/60 to-transparent flex items-end p-8">
-                    <span class="text-white text-sm tracking-widest uppercase font-medium drop-shadow-md">Module Schedule & Timings</span>
-                </div>
+            <!-- Cleaned up image block - Shows the whole picture perfectly centered with padding and no overlays -->
+            <div class="relative w-full h-full min-h-[400px] bg-white rounded-[2rem] border border-[#a68a69]/20 overflow-hidden shadow-sm flex items-center justify-center p-6">
+                <img src="schedule-placeholder.png" alt="Training Schedule" class="max-w-full max-h-full object-contain">
             </div>
             
             <!-- Enrollment Card -->
@@ -424,72 +420,86 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-[#efeae4] border-t border-[#a68a69]/20 py-16 text-center">
-    <img src="logo.png" alt="Logo" class="h-40 w-auto mx-auto mb-8 transition-transform hover:scale-105 duration-300" onerror="this.style.display='none'">
-    <div class="flex justify-center gap-6 mb-8">
-        <a href="https://www.linkedin.com/in/adela-zamrzlova-a013a2306/" target="_blank" class="text-[#48596b] hover:text-[#7a90a8] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
-        <a href="https://www.instagram.com/adele.yogi/" target="_blank" class="text-[#48596b] hover:text-[#7a90a8] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+<footer class="bg-[#48596b] text-[#efeae4] py-16 border-t border-[#a68a69]/20">
+    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
+        <div class="flex flex-col items-center md:items-start gap-2">
+            <span class="text-lg tracking-[0.15em] uppercase font-light text-[#efeae4]">The Intelligent Body</span>
+            <span class="text-[#a68a69] tracking-[0.12em] uppercase text-[10px] font-semibold">Yoga Academy & Private Mentor</span>
+        </div>
+        <div class="flex gap-6 text-xs tracking-widest uppercase font-light">
+            <a href="#philosophy" class="hover:text-[#aecae8] transition-colors">Philosophy</a>
+            <a href="#academy" class="hover:text-[#aecae8] transition-colors">Teacher Academy</a>
+            <a href="#offerings" class="hover:text-[#aecae8] transition-colors">Offerings</a>
+            <a href="#testimonials" class="hover:text-[#aecae8] transition-colors">Testimonials</a>
+        </div>
+        <div class="text-xs text-[#efeae4]/60 tracking-wider">
+            &copy; 2026 The Intelligent Body. All rights reserved.
+        </div>
     </div>
-    <p class="text-xs text-[#48596b]/60 uppercase tracking-widest font-light">&copy; 2026 The Intelligent Body. All rights reserved.</p>
 </footer>
 
+<!-- Scripts for interactive elements -->
 <script>
-    // Menu Toggle Logic
+    // Toggle Mobile Navigation Menu
     function toggleMenu() {
         const menu = document.getElementById('mobile-menu');
-        const icon = document.getElementById('menu-icon');
-        const isHidden = menu.classList.contains('hidden');
-        
-        if (isHidden) {
-            menu.classList.remove('hidden');
-            document.body.style.overflow = 'hidden';
-        } else {
-            menu.classList.add('hidden');
-            document.body.style.overflow = '';
+        if (menu) {
+            menu.classList.toggle('hidden');
         }
     }
 
-    // Popup Logic
-    document.addEventListener('DOMContentLoaded', () => {
+    // Initialize and display Promo Pop-up on load
+    window.addEventListener('DOMContentLoaded', () => {
         const popup = document.getElementById('promo-popup');
-        const closeBtn = document.getElementById('close-popup');
-        
-        // Show popup only if not previously closed in this session (optional logic)
-        // For demonstration, it pops up after 1.5 seconds if 'popupClosed' is not set.
-        if (!sessionStorage.getItem('popupClosed')) {
-            setTimeout(() => {
-                popup.classList.remove('hidden');
-                popup.classList.add('flex');
-            }, 1500);
+        if (popup) {
+            popup.classList.remove('hidden');
+            popup.classList.add('flex');
         }
-
-        // Close logic
-        closeBtn.addEventListener('click', () => {
-            popup.classList.add('hidden');
-            popup.classList.remove('flex');
-            sessionStorage.setItem('popupClosed', 'true');
-        });
     });
 
-    // Form Handling
-    document.getElementById('booking-form').addEventListener('submit', function(e) {
-        e.preventDefault();
-        
-        fetch(this.action, {
-            method: this.method,
-            body: new FormData(this),
-            headers: { 'Accept': 'application/json' }
-        }).then(response => {
-            if (response.ok) {
-                this.style.display = 'none';
-                document.getElementById('success-msg').classList.remove('hidden');
-            } else {
-                alert('Oops! There was a problem submitting your form.');
+    // Close Promo Pop-up logic
+    const closePopupBtn = document.getElementById('close-popup');
+    if (closePopupBtn) {
+        closePopupBtn.addEventListener('click', () => {
+            const popup = document.getElementById('promo-popup');
+            if (popup) {
+                popup.classList.remove('flex');
+                popup.classList.add('hidden');
             }
-        }).catch(error => {
-            alert('Oops! There was a problem submitting your form.');
         });
-    });
+    }
+
+    // Ajax Formspree Handling with Success Message inline reveal
+    const bookingForm = document.getElementById('booking-form');
+    const successMsg = document.getElementById('success-msg');
+
+    if (bookingForm && successMsg) {
+        bookingForm.addEventListener('submit', async function(e) {
+            e.preventDefault();
+            const data = new FormData(bookingForm);
+            
+            try {
+                const response = await fetch(bookingForm.action, {
+                    method: 'POST',
+                    body: data,
+                    headers: {
+                        'Accept': 'application/json'
+                    }
+                });
+                
+                if (response.ok) {
+                    bookingForm.reset();
+                    bookingForm.classList.add('hidden');
+                    successMsg.classList.remove('hidden');
+                } else {
+                    alert('There was a problem submitting your request. Please try again.');
+                }
+            } catch (error) {
+                alert('Network error. Please check your connection and try again.');
+            }
+        });
+    }
 </script>
+
 </body>
 </html>
