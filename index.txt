@@ -1,0 +1,495 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-89CGXP65BQ"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-89CGXP65BQ');
+    </script>
+
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Intelligent Body | Yoga Teacher Training & Private Yoga Abu Dhabi</title>
+    <meta name="description" content="Elevate your practice with Adel, an ERYT-500 yoga mentor in Abu Dhabi. Offering premium private sessions, Saadiyat Beach flows, and certified yoga teacher training academy courses.">
+    <meta property="og:title" content="The Intelligent Body | Adel Yoga Abu Dhabi">
+    <meta property="og:image" content="profile.png">
+    <link rel="icon" type="image/png" href="logo.png">
+    
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght=200;300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+        .selection-theme::selection { background-color: #aecae8; color: #48596b; }
+        .fade-in { animation: fadeIn 0.8s ease-in-out forwards; }
+        @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+        
+        /* Popup Animation */
+        @keyframes popIn {
+            0% { opacity: 0; transform: scale(0.95); }
+            100% { opacity: 1; transform: scale(1); }
+        }
+        .animate-pop-in { animation: popIn 0.4s ease-out forwards; }
+        
+        @media (max-width: 768px) {
+            footer { padding-bottom: 80px; }
+        }
+    </style>
+</head>
+<body class="selection-theme text-[#48596b] bg-[#efeae4] min-h-screen">
+
+<!-- Popup Window (replaces floating banner) -->
+<div id="promo-popup" class="hidden fixed inset-0 z-[100] bg-[#48596b]/60 backdrop-blur-sm items-center justify-center p-4">
+    <div class="bg-white rounded-[2rem] shadow-2xl w-full max-w-lg relative overflow-hidden animate-pop-in border border-[#a68a69]/20">
+        <!-- Close Button -->
+        <button id="close-popup" class="absolute top-5 right-5 text-[#48596b]/60 hover:text-[#48596b] transition-colors p-2 z-10" aria-label="Close popup">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        
+        <div class="p-10 text-center relative z-0">
+            <span class="text-[#a68a69] tracking-[0.2em] uppercase text-[10px] font-bold mb-3 block">Autumn 2026 Intake</span>
+            <h3 class="text-2xl font-light text-[#48596b] mb-4 leading-tight">The Intelligent Body <br> <span class="font-medium">RYT-200 Teacher Training</span></h3>
+            <p class="text-sm text-[#48596b]/80 mb-6 font-light leading-relaxed">
+                Starting <strong>25th September</strong>. Registrations are now open. Secure your spot early and take advantage of our exclusive Early Bird pricing.
+            </p>
+            <button onclick="document.getElementById('close-popup').click(); document.getElementById('academy').scrollIntoView({behavior: 'smooth'});" class="bg-[#48596b] text-[#efeae4] px-8 py-3.5 rounded-full tracking-widest uppercase text-xs font-bold hover:bg-[#7a90a8] transition-all w-full shadow-sm">
+                Explore Details & Enroll
+            </button>
+        </div>
+        <!-- Decorative accent -->
+        <div class="absolute -bottom-10 -right-10 w-32 h-32 bg-[#aecae8] rounded-full opacity-20 blur-2xl"></div>
+    </div>
+</div>
+
+<!-- Navigation -->
+<nav class="fixed w-full top-0 z-50 bg-[#efeae4]/90 backdrop-blur-md border-b border-[#a68a69]/20">
+    <div class="max-w-7xl mx-auto px-6 lg:px-10 xl:px-12">
+        <div class="flex justify-between items-center h-28 gap-4 lg:gap-8 xl:gap-12">
+            <!-- Logo Section -->
+            <a href="#home" class="flex items-center gap-3 md:gap-4 group flex-shrink-0">
+                <img src="logo.png" alt="Logo" class="h-14 lg:h-18 xl:h-20 w-auto object-contain transition-transform group-hover:scale-105" onerror="this.style.display='none'">
+                <div class="flex flex-col justify-center pt-1">
+                    <span class="text-base lg:text-lg xl:text-xl tracking-[0.15em] uppercase font-light text-[#48596b] leading-normal whitespace-nowrap">The Intelligent Body</span>
+                    <span class="text-[#a68a69] tracking-[0.12em] uppercase text-[9px] lg:text-[11px] xl:text-xs font-semibold mt-1 block whitespace-nowrap">Yoga Academy & Private Mentor</span>
+                </div>
+            </a>
+            
+            <!-- Desktop Menu -->
+            <div class="hidden lg:flex items-center gap-5 xl:gap-8 text-[13px] xl:text-sm tracking-widest uppercase font-medium whitespace-nowrap">
+                <a href="#philosophy" class="hover:text-[#7a90a8] transition-colors">Philosophy</a>
+                <a href="#academy" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
+                <a href="#offerings" class="hover:text-[#7a90a8] transition-colors">Offerings</a>
+                <a href="#testimonials" class="hover:text-[#7a90a8] transition-colors">Testimonials</a>
+                <a href="#book" class="bg-[#48596b] text-[#efeae4] px-5 xl:px-6 py-2.5 rounded-full hover:bg-[#7a90a8] transition-all shadow-sm">Book a Session</a>
+            </div>
+            
+            <!-- Mobile Menu Toggle -->
+            <button class="lg:hidden text-[#48596b] p-2 ml-auto" onclick="toggleMenu()" aria-label="Toggle Menu">
+                <svg id="menu-icon" xmlns="http://www.w3.org/2000/svg" width="28" height="28" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="3" y1="12" x2="21" y2="12"></line><line x1="3" y1="6" x2="21" y2="6"></line><line x1="3" y1="18" x2="21" y2="18"></line></svg>
+            </button>
+        </div>
+    </div>
+</nav>
+
+<!-- Mobile Menu Overlay -->
+<div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-[#efeae4] flex flex-col items-center justify-center">
+    <button class="absolute top-10 right-10 text-[#48596b]" onclick="toggleMenu()">
+        <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+    </button>
+    <div class="mb-12 flex flex-col items-center gap-4">
+        <img src="logo.png" alt="Logo" class="h-24 w-auto object-contain" onerror="this.style.display='none'">
+        <span class="text-lg tracking-[0.2em] uppercase font-light text-[#48596b]">The Intelligent Body</span>
+    </div>
+    <div class="flex flex-col items-center gap-6 text-xl tracking-[0.2em] uppercase font-light">
+        <a href="#philosophy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Philosophy</a>
+        <a href="#academy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
+        <a href="#offerings" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Offerings</a>
+        <a href="#testimonials" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Testimonials</a>
+        <a href="#book" onclick="toggleMenu()" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full mt-4">Book a Session</a>
+    </div>
+</div>
+
+<!-- Hero Section -->
+<section id="home" class="pt-36 pb-16 lg:pt-44 lg:pb-24 px-6 lg:px-12 max-w-7xl mx-auto flex flex-col lg:flex-row items-center gap-12 lg:gap-16 xl:gap-20">
+    <div class="flex-1 w-full max-w-sm lg:max-w-md xl:max-w-lg relative fade-in order-1 lg:order-1">
+        <div class="absolute top-8 -right-4 lg:-right-8 w-full h-full bg-[#aecae8] rounded-t-[8rem] rounded-b-3xl -z-10 opacity-40"></div>
+        <img src="profile.png" alt="Adel" class="w-full h-[420px] lg:h-[520px] xl:h-[620px] object-cover rounded-t-[8rem] rounded-b-3xl shadow-lg border-4 border-white">
+    </div>
+    <div class="flex-1 text-center lg:text-left fade-in order-2 lg:order-2" style="animation-delay: 0.2s;">
+        <span class="text-[#a68a69] tracking-[0.3em] uppercase text-xs lg:text-sm font-semibold mb-4 block">ERYT-500 Yoga mentor in Abu Dhabi</span>
+        <h1 class="text-5xl lg:text-6xl xl:text-7xl font-light text-[#48596b] mb-6 leading-tight">
+            Movement. <br>
+            <span class="italic text-[#7a90a8]">Breath.</span> <br>
+            Connection.
+        </h1>
+        <p class="text-base lg:text-lg text-[#48596b]/80 mb-10 max-w-lg mx-auto lg:mx-0 font-light leading-relaxed">
+            Cultivate mental clarity and physical resilience with Abu Dhabi's premier yoga guide. Explore deep alignment during our certified teacher courses or intimate private mentorship.
+        </p>
+        <div class="flex flex-col sm:flex-row items-center gap-4 justify-center lg:justify-start">
+            <a href="#book" class="bg-[#48596b] text-[#efeae4] px-8 py-4 rounded-full tracking-widest uppercase text-xs font-bold hover:bg-[#7a90a8] transition-all w-full sm:w-auto text-center">Start Your Journey</a>
+            <a href="#academy" class="bg-transparent border border-[#a68a69] text-[#a68a69] px-8 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-[#a68a69]/10 transition-all w-full sm:w-auto text-center font-bold">Teacher Training</a>
+        </div>
+    </div>
+</section>
+
+<!-- Philosophy Section -->
+<section id="philosophy" class="py-24 bg-[#a68a69]/5 relative overflow-hidden">
+    <div class="max-w-5xl mx-auto px-6 text-center relative z-10">
+        <h2 class="text-3xl lg:text-4xl xl:text-5xl font-light text-[#48596b] mb-12 uppercase tracking-[0.2em] leading-normal lg:leading-relaxed">
+            The <span class="italic text-[#7a90a8]">Intelligent</span> Body <br class="sm:hidden"> Yoga Academy
+        </h2>
+        
+        <div class="bg-white/80 backdrop-blur-sm p-8 md:p-16 rounded-[3rem] shadow-sm border border-[#a68a69]/20">
+            <div class="max-w-2xl mx-auto">
+                <div class="space-y-6 text-base md:text-lg text-[#48596b] font-light leading-relaxed text-left">
+                    <p>
+                        I discovered yoga 10 years ago, and it was a revelation. It began as a way to build physical strength, but it quickly became the practice that nurtured my mental clarity and redefined my resilience. That transformation was so profound that I knew I had to dedicate my life to sharing it.
+                    </p>
+                    <p>
+                        Now, as a Yoga Alliance ERYT-500 certified instructor with extensive experience leading <span class="text-[#a68a69] font-medium">yoga teacher training in Abu Dhabi</span>, my mission is to help you unlock that same inner peace and physical power. Whether you are looking for a personalized session with a <span class="text-[#7a90a8] font-medium">private yoga mentor</span> in the comfort of your home, joining a group class for a focused studio session, or connecting with nature through <span class="text-[#7a90a8] font-semibold border-b border-[#aecae8]">outdoor yoga on Saadiyat Beach</span>, every environment I create is designed to empower you to safely explore your limits.
+                    </p>
+                    <p>
+                        This is the core philosophy behind <span class="font-medium">The Intelligent Body</span>. I believe in the profound, natural intelligence of the physical form and the transformative power of the breath. My joy comes from guiding you on your personal wellness journey, helping you cultivate a life of growth, mindfulness, and deep, meaningful connection. Let’s discover what your body and mind are truly capable of.
+                    </p>
+                </div>
+                
+                <div class="mt-12 flex flex-col items-center gap-4 border-t border-[#efeae4] pt-10">
+                    <div class="w-28 h-28 rounded-full p-1 border-2 border-[#aecae8]">
+                        <img src="bio.jpg" alt="Adel" class="w-full h-full rounded-full object-cover">
+                    </div>
+                    <div class="text-center">
+                        <p class="font-bold text-[#48596b] uppercase tracking-[0.4em] text-sm">Adel</p>
+                        <p class="text-[#a68a69] text-xs font-bold tracking-widest uppercase mt-1">Founder, ERYT-500</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Teacher Training Section -->
+<section id="academy" class="py-24 bg-[#efeae4] border-t border-[#a68a69]/10">
+    <div class="max-w-7xl mx-auto px-6">
+        
+        <!-- Header -->
+        <div class="text-center mb-16">
+            <span class="text-[#a68a69] tracking-[0.3em] uppercase text-xs font-bold mb-3 block">Yoga Alliance Certified</span>
+            <h2 class="text-3xl md:text-4xl lg:text-5xl font-light text-[#48596b] uppercase tracking-[0.15em] mb-8 leading-normal lg:leading-relaxed max-w-4xl mx-auto">
+                The Intelligent Body <br>
+                <span class="text-2xl md:text-3xl tracking-[0.2em] italic text-[#7a90a8]">200 Hour Yoga Teacher Training</span>
+            </h2>
+        </div>
+
+        <!-- Intro Text Grid -->
+        <div class="grid md:grid-cols-2 gap-12 lg:gap-20 max-w-5xl mx-auto mb-20 text-base md:text-lg text-[#48596b] font-light leading-relaxed">
+            <div>
+                <p class="mb-6">
+                    <span class="font-medium text-[#a68a69]">Yoga is more than movement.</span> It is a practice that integrates the body, the breath and the mind.
+                </p>
+                <p>
+                    The Intelligent Body was created for those who want to teach yoga with depth, confidence and understanding. It blends modern anatomy and biomechanics with the timeless wisdom of yoga, offering a practical and thoughtful approach to both personal practice and teaching.
+                </p>
+            </div>
+            <div>
+                <p class="mb-6">
+                    Throughout the training, you will learn how the body moves, how to build a safe and sustainable asana practice, and how to adapt postures to meet the needs of different individuals. Alongside this, you will explore the essential practices of pranayama, meditation and yoga philosophy, discovering how breath, awareness and movement work together to create a meaningful yoga experience.
+                </p>
+                <p>
+                    This training is designed to help you think like a teacher rather than simply follow sequences. You will learn to observe, ask questions, make informed decisions and guide students with clarity and compassion.
+                </p>
+            </div>
+        </div>
+
+        <!-- What to Expect Box -->
+        <div class="bg-white p-8 md:p-12 lg:p-16 rounded-[3rem] border border-[#a68a69]/20 shadow-sm mb-20">
+            <h3 class="text-2xl md:text-3xl font-light text-[#48596b] mb-10 text-center tracking-wide">What you will experience:</h3>
+            <div class="grid md:grid-cols-2 gap-x-12 gap-y-6 max-w-4xl mx-auto">
+                
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 flex-shrink-0 bg-[#aecae8]/30 p-1.5 rounded-full text-[#48596b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-[15px] leading-relaxed font-light">Functional anatomy and biomechanics for yoga</span>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 flex-shrink-0 bg-[#aecae8]/30 p-1.5 rounded-full text-[#48596b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-[15px] leading-relaxed font-light">Intelligent alignment principles</span>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 flex-shrink-0 bg-[#aecae8]/30 p-1.5 rounded-full text-[#48596b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-[15px] leading-relaxed font-light">Traditional asana practice with modern understanding</span>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 flex-shrink-0 bg-[#aecae8]/30 p-1.5 rounded-full text-[#48596b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-[15px] leading-relaxed font-light">Pranayama techniques and breath awareness</span>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 flex-shrink-0 bg-[#aecae8]/30 p-1.5 rounded-full text-[#48596b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-[15px] leading-relaxed font-light">Meditation practices for presence and self-inquiry</span>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 flex-shrink-0 bg-[#aecae8]/30 p-1.5 rounded-full text-[#48596b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-[15px] leading-relaxed font-light">Yoga philosophy and the roots of the practice</span>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 flex-shrink-0 bg-[#aecae8]/30 p-1.5 rounded-full text-[#48596b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-[15px] leading-relaxed font-light">Sequencing, teaching methodology and hands-on practice</span>
+                </div>
+                
+                <div class="flex items-start gap-4">
+                    <div class="mt-1 flex-shrink-0 bg-[#aecae8]/30 p-1.5 rounded-full text-[#48596b]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                    </div>
+                    <span class="text-[15px] leading-relaxed font-light">Personal feedback and individual mentorship</span>
+                </div>
+                
+                <div class="flex items-start gap-4 md:col-span-2 mt-2">
+                    <div class="mt-1 flex-shrink-0 bg-[#a68a69]/20 p-1.5 rounded-full text-[#a68a69]">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"><path d="M20.42 4.58a5.4 5.4 0 0 0-7.65 0l-.77.78-.77-.78a5.4 5.4 0 0 0-7.65 0C1.46 6.7 1.33 10.28 4 13l8 8 8-8c2.67-2.72 2.54-6.3.42-8.42z"></path></svg>
+                    </div>
+                    <span class="text-[15px] leading-relaxed font-medium text-[#48596b]">A supportive community that encourages curiosity, growth and lifelong learning</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- Schedule and Registration Block -->
+        <div class="grid lg:grid-cols-2 gap-10 items-stretch mb-20 max-w-6xl mx-auto">
+            
+            <!-- Schedule Image Placeholder -->
+            <div class="relative w-full h-full min-h-[400px] bg-white rounded-[2rem] border border-[#a68a69]/20 overflow-hidden shadow-sm group">
+                <!-- Replace 'src' with your actual schedule image URL when ready -->
+                <img src="https://placehold.co/800x1000/efeae4/48596b?font=inter&text=Upload+Schedule+%26+Timings+Here" alt="Training Schedule" class="absolute inset-0 w-full h-full object-cover transition-transform duration-500 group-hover:scale-105">
+                <div class="absolute inset-0 bg-gradient-to-t from-[#48596b]/60 to-transparent flex items-end p-8">
+                    <span class="text-white text-sm tracking-widest uppercase font-medium drop-shadow-md">Module Schedule & Timings</span>
+                </div>
+            </div>
+
+            <!-- Enrollment Card -->
+            <div class="bg-[#48596b] text-[#efeae4] p-10 md:p-14 rounded-[2rem] shadow-lg flex flex-col justify-center relative overflow-hidden">
+                <!-- Decorative background circle -->
+                <div class="absolute -top-16 -right-16 w-48 h-48 bg-[#aecae8] rounded-full opacity-10 blur-3xl"></div>
+                
+                <div class="relative z-10">
+                    <div class="inline-flex bg-[#a68a69] text-white px-4 py-1.5 rounded-full text-[10px] uppercase font-bold tracking-widest mb-6 shadow-sm">
+                        Registrations Open
+                    </div>
+                    
+                    <h3 class="text-3xl font-light mb-4">Autumn 2026 Intake</h3>
+                    <p class="text-[#aecae8] font-medium tracking-wide mb-6">Commencing 25th September 2026</p>
+                    
+                    <div class="bg-[#efeae4]/10 p-6 rounded-2xl border border-[#efeae4]/20 mb-8 backdrop-blur-sm">
+                        <div class="flex items-center gap-3 mb-2">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="#a68a69" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"></circle><polyline points="12 6 12 12 16 14"></polyline></svg>
+                            <span class="font-semibold text-lg">Early Bird Offer</span>
+                        </div>
+                        <p class="text-sm font-light text-[#efeae4]/80 leading-relaxed">
+                            Register before <strong>31st August 2026</strong> to secure your spot at the exclusive early bird discounted rate. Spaces are strictly limited to ensure personal attention.
+                        </p>
+                    </div>
+                    
+                    <!-- Call to Action for Payment Gateway -->
+                    <a href="#payment-link" class="block w-full bg-[#efeae4] text-[#48596b] text-center py-5 rounded-full font-bold uppercase tracking-widest text-sm hover:bg-white hover:shadow-xl hover:-translate-y-1 transition-all duration-300">
+                        Enroll Now & Claim Early Bird
+                    </a>
+                    <p class="text-center text-[10px] text-[#efeae4]/50 mt-4 uppercase tracking-wider">
+                        Secure checkout • Reserve your spot
+                    </p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Closing Text -->
+        <div class="max-w-3xl mx-auto text-center mt-12 mb-8">
+            <p class="text-lg md:text-xl text-[#48596b] font-light leading-relaxed mb-8 italic">
+                Whether you dream of becoming a yoga teacher or simply wish to deepen your own practice, The Intelligent Body will give you the knowledge, confidence and perspective to teach—and live—yoga with greater awareness.
+            </p>
+            <p class="text-xl md:text-2xl text-[#48596b] font-medium tracking-wide">
+                Because great teachers don’t just know the poses.<br>
+                <span class="text-[#a68a69]">They understand people.</span>
+            </p>
+        </div>
+
+    </div>
+</section>
+
+<!-- Offerings Section -->
+<section id="offerings" class="py-24 bg-white">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="text-center mb-16">
+            <h2 class="text-3xl md:text-5xl font-light text-[#48596b] mb-4 uppercase tracking-[0.2em]">Ways to Practice</h2>
+            <p class="text-[#a68a69] tracking-widest uppercase text-sm font-medium">Tailored experiences for your lifestyle</p>
+        </div>
+        <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div class="bg-[#efeae4] p-10 rounded-[2rem] border border-[#a68a69]/10 flex flex-col h-full">
+                <h3 class="text-xl font-light text-[#48596b] mb-4 uppercase tracking-widest">Studio</h3>
+                <p class="text-sm leading-relaxed text-[#48596b]/80">
+                    Join me in some of Abu Dhabi's most serene and inspiring studio spaces. These community-driven sessions are designed to help you connect with like-minded practitioners while receiving professional guidance in a focused environment.
+                </p>
+            </div>
+            <div class="bg-[#a68a69]/20 p-10 rounded-[2rem] border border-[#a68a69]/20 flex flex-col h-full">
+                <h3 class="text-xl font-light text-[#48596b] mb-4 uppercase tracking-widest">Private</h3>
+                <p class="text-sm leading-relaxed text-[#48596b]/80">
+                    Experience the luxury of personalized 1-on-1 guidance tailored specifically to your body's needs and your personal goals. Whether in the sanctuary of your own home or a private setting, we focus on alignment, breath, and your unique journey.
+                </p>
+            </div>
+            <div class="bg-[#aecae8]/30 p-10 rounded-[2rem] border border-[#7a90a8]/20 flex flex-col h-full">
+                <h3 class="text-xl font-light text-[#48596b] mb-4 uppercase tracking-widest">Outdoor</h3>
+                <p class="text-sm leading-relaxed text-[#48596b]/80">
+                    Connect with the elements and find your flow on the pristine, turquoise shores of Saadiyat Beach. There is no better way to practice mindfulness than with the sound of the waves and the natural energy of the ocean.
+                </p>
+            </div>
+            <div class="bg-[#48596b] p-10 rounded-[2rem] text-[#efeae4] flex flex-col h-full">
+                <h3 class="text-xl font-light mb-4 uppercase tracking-widest">Events</h3>
+                <p class="text-sm leading-relaxed text-[#efeae4]/80">
+                    From corporate wellness programs to high-profile brand partnerships like Alo Abu Dhabi, I create bespoke yoga experiences for groups and events. These sessions are designed to inspire, energize, and foster deep connection.
+                </p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Testimonials -->
+<section id="testimonials" class="py-24 bg-[#48596b] text-[#efeae4]">
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 text-center">
+        <h2 class="text-3xl lg:text-4xl font-light mb-16 uppercase tracking-widest">Community Love</h2>
+        <div class="grid md:grid-cols-3 gap-8 text-left">
+            <div class="bg-[#7a90a8]/20 p-8 rounded-2xl border border-[#aecae8]/10 italic font-light">
+                "Adel is unequivocally the best yoga teacher in Abu Dhabi."
+                <p class="mt-6 font-medium uppercase text-xs text-[#a68a69] not-italic">- Sarah T.</p>
+            </div>
+            <div class="bg-[#7a90a8]/20 p-8 rounded-2xl border border-[#aecae8]/10 italic font-light">
+                "Having private sessions with Adel in my home transformed my practice."
+                <p class="mt-6 font-medium uppercase text-xs text-[#a68a69] not-italic">- Elena M.</p>
+            </div>
+            <div class="bg-[#7a90a8]/20 p-8 rounded-2xl border border-[#aecae8]/10 italic font-light">
+                "Her energy is contagious. You go for the meaningful connection."
+                <p class="mt-6 font-medium uppercase text-xs text-[#a68a69] not-italic">- James R.</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Booking Section -->
+<section id="book" class="py-24 max-w-5xl mx-auto px-6 relative">
+    <div class="bg-white rounded-[3rem] p-8 md:p-20 border border-[#a68a69]/20 shadow-sm relative z-10">
+        <div class="text-center mb-12">
+            <h2 class="text-3xl md:text-5xl font-light text-[#48596b] mb-4 uppercase tracking-[0.2em]">Begin Your Journey</h2>
+            <p class="text-[#7a90a8] font-medium tracking-wide uppercase text-sm">Private & Studio Sessions in Abu Dhabi</p>
+        </div>
+        <form id="booking-form" action="https://formspree.io/f/xeedowqd" method="POST" class="space-y-8 max-w-2xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <label class="block text-xs font-bold text-[#a68a69] mb-3 uppercase">Your Name</label>
+                    <input type="text" name="name" required class="w-full px-6 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-2xl outline-none" placeholder="Name">
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-[#a68a69] mb-3 uppercase">Your Email</label>
+                    <input type="email" name="_replyto" required class="w-full px-6 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-2xl outline-none" placeholder="email@example.com">
+                </div>
+            </div>
+            <div>
+                <label class="block text-xs font-bold text-[#a68a69] mb-3 uppercase">How can I help you?</label>
+                <textarea name="message" rows="5" required class="w-full px-6 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-2xl outline-none resize-none" placeholder="Experience level, injuries, or goals..."></textarea>
+            </div>
+            <div class="text-center pt-4">
+                <button type="submit" class="bg-[#48596b] text-[#efeae4] px-12 py-5 rounded-full tracking-[0.3em] uppercase font-bold text-sm hover:bg-[#7a90a8] transition-all w-full md:w-auto">Request a Session</button>
+            </div>
+        </form>
+        <div id="success-msg" class="hidden text-center p-8 bg-[#aecae8]/20 rounded-3xl border border-[#aecae8]/30 mt-8">
+            <h3 class="text-2xl font-light text-[#48596b] mb-2 uppercase tracking-widest">Namaste</h3>
+            <p class="text-[#48596b]/80">Thank you for reaching out. I will get back to you shortly.</p>
+        </div>
+    </div>
+</section>
+
+<!-- Footer -->
+<footer class="bg-[#efeae4] border-t border-[#a68a69]/20 py-16 text-center">
+    <img src="logo.png" alt="Logo" class="h-40 w-auto mx-auto mb-8 transition-transform hover:scale-105 duration-300" onerror="this.style.display='none'">
+    <div class="flex justify-center gap-6 mb-8">
+        <a href="https://www.linkedin.com/in/adela-zamrzlova-a013a2306/" target="_blank" class="text-[#48596b] hover:text-[#7a90a8] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg></a>
+        <a href="https://www.instagram.com/adele.yogi/" target="_blank" class="text-[#48596b] hover:text-[#7a90a8] transition-colors"><svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg></a>
+    </div>
+    <p class="text-xs text-[#48596b]/60 uppercase tracking-widest font-light">&copy; 2026 The Intelligent Body. All rights reserved.</p>
+</footer>
+
+<script>
+    // Menu Toggle Logic
+    function toggleMenu() {
+        const menu = document.getElementById('mobile-menu');
+        const icon = document.getElementById('menu-icon');
+        const isHidden = menu.classList.contains('hidden');
+        
+        if (isHidden) {
+            menu.classList.remove('hidden');
+            document.body.style.overflow = 'hidden';
+        } else {
+            menu.classList.add('hidden');
+            document.body.style.overflow = '';
+        }
+    }
+
+    // Popup Logic
+    document.addEventListener('DOMContentLoaded', () => {
+        const popup = document.getElementById('promo-popup');
+        const closeBtn = document.getElementById('close-popup');
+        
+        // Show popup only if not previously closed in this session (optional logic)
+        // For demonstration, it pops up after 1.5 seconds if 'popupClosed' is not set.
+        if (!sessionStorage.getItem('popupClosed')) {
+            setTimeout(() => {
+                popup.classList.remove('hidden');
+                popup.classList.add('flex');
+            }, 1500);
+        }
+
+        // Close logic
+        closeBtn.addEventListener('click', () => {
+            popup.classList.add('hidden');
+            popup.classList.remove('flex');
+            sessionStorage.setItem('popupClosed', 'true');
+        });
+    });
+
+    // Form Handling
+    document.getElementById('booking-form').addEventListener('submit', function(e) {
+        e.preventDefault();
+        
+        fetch(this.action, {
+            method: this.method,
+            body: new FormData(this),
+            headers: { 'Accept': 'application/json' }
+        }).then(response => {
+            if (response.ok) {
+                this.style.display = 'none';
+                document.getElementById('success-msg').classList.remove('hidden');
+            } else {
+                alert('Oops! There was a problem submitting your form.');
+            }
+        }).catch(error => {
+            alert('Oops! There was a problem submitting your form.');
+        });
+    });
+</script>
+</body>
+</html>
