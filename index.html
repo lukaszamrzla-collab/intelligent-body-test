@@ -276,9 +276,71 @@
         <!-- Schedule and Registration Block -->
         <div class="grid lg:grid-cols-2 gap-10 items-stretch mb-20 max-w-6xl mx-auto">
             
-            <!-- Cleaned up image block - Shows the whole picture perfectly centered with padding and no overlays -->
-            <div class="relative w-full h-full min-h-[400px] bg-white rounded-[2rem] border border-[#a68a69]/20 overflow-hidden shadow-sm flex items-center justify-center p-6">
-                <img src="schedule-placeholder.png" alt="Training Schedule" class="max-w-full max-h-full object-contain">
+            <!-- Beautifully styled Interactive HTML Schedule Card -->
+            <div class="w-full bg-[#faf8f5] rounded-[2rem] border border-[#a68a69]/20 shadow-sm flex flex-col p-6 md:p-8 justify-between h-full">
+                <div class="text-center mb-6">
+                    <span class="text-[10px] md:text-xs text-[#48596b]/70 tracking-[0.25em] uppercase font-light block mb-1.5">200-Hour Yoga Teacher Training</span>
+                    <h3 class="text-3xl md:text-4xl font-light text-[#48596b] tracking-[0.2em] uppercase">Schedule</h3>
+                </div>
+                
+                <div class="overflow-x-auto w-full">
+                    <table class="w-full text-center border-collapse text-[10px] sm:text-[11px] md:text-xs tracking-wider">
+                        <thead>
+                            <tr class="bg-[#dbcebf] text-[#48596b] uppercase tracking-[0.2em] font-medium text-[9px] sm:text-[10px] md:text-[11px]">
+                                <th class="py-3 px-2 border border-[#ebdcd0] w-[28%] font-medium">Module</th>
+                                <th class="py-3 px-2 border border-[#ebdcd0] w-[44%] font-medium">Dates</th>
+                                <th class="py-3 px-2 border border-[#ebdcd0] w-[28%] font-medium">Format</th>
+                            </tr>
+                        </thead>
+                        <tbody class="text-[#48596b] uppercase font-light">
+                            <tr class="hover:bg-[#efeae4]/40 transition-colors duration-150">
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] font-normal whitespace-nowrap">Module 1</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] whitespace-nowrap">25–27 September 2026</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] text-[#a68a69] font-medium whitespace-nowrap">In-Person</td>
+                            </tr>
+                            <tr class="hover:bg-[#efeae4]/40 transition-colors duration-150">
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] font-normal whitespace-nowrap">Module 2</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] whitespace-nowrap">2–4 October 2026</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] text-[#a68a69] font-medium whitespace-nowrap">In-Person</td>
+                            </tr>
+                            <tr class="hover:bg-[#efeae4]/40 transition-colors duration-150">
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] font-normal whitespace-nowrap">Module 3</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] whitespace-nowrap">23–25 October 2026</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] text-[#a68a69] font-medium whitespace-nowrap">In-Person</td>
+                            </tr>
+                            <tr class="hover:bg-[#efeae4]/40 transition-colors duration-150">
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] font-normal whitespace-nowrap">Module 4</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] whitespace-nowrap">6–8 November 2026</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] text-[#a68a69] font-medium whitespace-nowrap">In-Person</td>
+                            </tr>
+                            <tr class="hover:bg-[#efeae4]/40 transition-colors duration-150">
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] font-normal whitespace-nowrap">Module 5</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] whitespace-nowrap">13–15 November 2026</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] text-[#a68a69] font-medium whitespace-nowrap">In-Person</td>
+                            </tr>
+                            <tr class="hover:bg-[#efeae4]/40 transition-colors duration-150">
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] font-normal whitespace-nowrap">Module 6</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] whitespace-nowrap">27–29 November 2026</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] text-[#a68a69] font-medium whitespace-nowrap">In-Person</td>
+                            </tr>
+                            <tr class="hover:bg-[#efeae4]/40 transition-colors duration-150 font-medium bg-[#dbcebf]/10">
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] whitespace-nowrap">Online Module</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] whitespace-nowrap">11–12 December 2026</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] text-[#a68a69] whitespace-nowrap">Online</td>
+                            </tr>
+                            <tr class="hover:bg-[#efeae4]/40 transition-colors duration-150">
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] font-normal whitespace-nowrap">Module 7</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] whitespace-nowrap">8–10 January 2027</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] text-[#a68a69] font-medium whitespace-nowrap">In-Person</td>
+                            </tr>
+                            <tr class="hover:bg-[#efeae4]/40 transition-colors duration-150">
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] font-normal whitespace-nowrap">Module 8</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] whitespace-nowrap">22–24 January 2027</td>
+                                <td class="py-3.5 px-2 border border-[#ebdcd0] text-[#a68a69] font-medium whitespace-nowrap">In-Person</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
             </div>
             
             <!-- Enrollment Card -->
@@ -421,85 +483,64 @@
 
 <!-- Footer -->
 <footer class="bg-[#48596b] text-[#efeae4] py-16 border-t border-[#a68a69]/20">
-    <div class="max-w-7xl mx-auto px-6 flex flex-col md:flex-row justify-between items-center gap-8">
-        <div class="flex flex-col items-center md:items-start gap-2">
-            <span class="text-lg tracking-[0.15em] uppercase font-light text-[#efeae4]">The Intelligent Body</span>
-            <span class="text-[#a68a69] tracking-[0.12em] uppercase text-[10px] font-semibold">Yoga Academy & Private Mentor</span>
-        </div>
-        <div class="flex gap-6 text-xs tracking-widest uppercase font-light">
-            <a href="#philosophy" class="hover:text-[#aecae8] transition-colors">Philosophy</a>
-            <a href="#academy" class="hover:text-[#aecae8] transition-colors">Teacher Academy</a>
-            <a href="#offerings" class="hover:text-[#aecae8] transition-colors">Offerings</a>
-            <a href="#testimonials" class="hover:text-[#aecae8] transition-colors">Testimonials</a>
-        </div>
-        <div class="text-xs text-[#efeae4]/60 tracking-wider">
+    <div class="max-w-7xl mx-auto px-6 text-center">
+        <p class="text-sm font-light text-[#efeae4]/60">
             &copy; 2026 The Intelligent Body. All rights reserved.
-        </div>
+        </p>
     </div>
 </footer>
 
-<!-- Scripts for interactive elements -->
 <script>
-    // Toggle Mobile Navigation Menu
+    // Mobile Menu Toggle
     function toggleMenu() {
         const menu = document.getElementById('mobile-menu');
-        if (menu) {
-            menu.classList.toggle('hidden');
-        }
+        menu.classList.toggle('hidden');
     }
 
-    // Initialize and display Promo Pop-up on load
-    window.addEventListener('DOMContentLoaded', () => {
+    // Popup Close & Init
+    document.addEventListener('DOMContentLoaded', () => {
         const popup = document.getElementById('promo-popup');
-        if (popup) {
-            popup.classList.remove('hidden');
-            popup.classList.add('flex');
+        const closeBtn = document.getElementById('close-popup');
+        
+        if (popup && closeBtn) {
+            // Show popup with a slight delay
+            setTimeout(() => {
+                popup.classList.remove('hidden');
+                popup.classList.add('flex');
+            }, 1500);
+
+            closeBtn.addEventListener('click', () => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+            });
+        }
+
+        // Handle booking form submission
+        const form = document.getElementById('booking-form');
+        const successMsg = document.getElementById('success-msg');
+        if (form && successMsg) {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const data = new FormData(form);
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: data,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    if (response.ok) {
+                        form.reset();
+                        form.classList.add('hidden');
+                        successMsg.classList.remove('hidden');
+                    } else {
+                        alert('Oops! There was a problem submitting your request.');
+                    }
+                } catch (error) {
+                    alert('Oops! There was a network issue submitting your request.');
+                }
+            });
         }
     });
-
-    // Close Promo Pop-up logic
-    const closePopupBtn = document.getElementById('close-popup');
-    if (closePopupBtn) {
-        closePopupBtn.addEventListener('click', () => {
-            const popup = document.getElementById('promo-popup');
-            if (popup) {
-                popup.classList.remove('flex');
-                popup.classList.add('hidden');
-            }
-        });
-    }
-
-    // Ajax Formspree Handling with Success Message inline reveal
-    const bookingForm = document.getElementById('booking-form');
-    const successMsg = document.getElementById('success-msg');
-
-    if (bookingForm && successMsg) {
-        bookingForm.addEventListener('submit', async function(e) {
-            e.preventDefault();
-            const data = new FormData(bookingForm);
-            
-            try {
-                const response = await fetch(bookingForm.action, {
-                    method: 'POST',
-                    body: data,
-                    headers: {
-                        'Accept': 'application/json'
-                    }
-                });
-                
-                if (response.ok) {
-                    bookingForm.reset();
-                    bookingForm.classList.add('hidden');
-                    successMsg.classList.remove('hidden');
-                } else {
-                    alert('There was a problem submitting your request. Please try again.');
-                }
-            } catch (error) {
-                alert('Network error. Please check your connection and try again.');
-            }
-        });
-    }
 </script>
-
 </body>
 </html>
