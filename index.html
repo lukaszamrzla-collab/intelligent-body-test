@@ -433,13 +433,15 @@
                 </div>
                 
                 <!-- Cleaned Up Checkbox pointing to custom Popup -->
-                <div class="flex items-start gap-3 pt-1">
-                    <input type="checkbox" name="policy_agreement" id="terms-checkbox" required 
-                           class="mt-1 accent-[#a68a69] w-4 h-4 rounded border-[#efeae4]/20 bg-[#efeae4]/10 cursor-pointer">
-                    <label for="terms-checkbox" class="text-[11px] text-[#efeae4]/80 leading-relaxed font-light select-none cursor-pointer">
-                        I agree to the <button type="button" onclick="toggleTermsModal(true)" class="underline hover:text-white transition-colors font-normal inline bg-transparent border-none p-0 cursor-pointer">Terms & Conditions</button>.
-                    </label>
-                </div>
+                <div class="text-center pt-1">
+    <p class="text-[11px] text-[#efeae4]/80 leading-relaxed font-light">
+        Please review our 
+        <button type="button" onclick="toggleTermsModal(true)" class="underline hover:text-white transition-colors font-normal inline bg-transparent border-none p-0 cursor-pointer">
+            Terms & Conditions
+        </button>
+        prior to registration.
+    </p>
+</div>
                 
                 <!-- Submit Button -->
                 <button type="submit" 
