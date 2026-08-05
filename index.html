@@ -723,43 +723,38 @@
     <!-- Decorative background elements -->
     <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#aecae8] rounded-full mix-blend-overlay filter blur-[100px] opacity-10"></div>
     
-    <div class="max-w-4xl mx-auto px-6 relative z-10">
-        <div class="bg-white rounded-[3rem] p-10 md:p-16 border border-[#a68a69]/30 shadow-2xl">
-            <div class="text-center mb-12">
-                <span class="text-[#a68a69] tracking-[0.3em] uppercase text-[10px] font-bold mb-3 block">Private Client Application</span>
-                <h2 class="font-serif-luxury text-4xl md:text-5xl font-light text-[#48596b] mb-4 uppercase tracking-wide">Request The Ritual</h2>
-                <p class="text-[#48596b]/60 font-light text-sm max-w-lg mx-auto">
-                    Due to the highly personalized nature of this exclusive in-home experience, availability is strictly limited. Please submit your details below, and Adel will contact you personally to curate your session.
-                </p>
+    <div class="max-w-3xl mx-auto px-6 relative z-10">
+        <div class="text-center mb-16">
+            <span class="text-[#a68a69] tracking-[0.3em] uppercase text-[10px] font-bold mb-3 block">Private Client Application</span>
+            <h2 class="font-serif-luxury text-4xl md:text-5xl font-light text-[#efeae4] mb-4 uppercase tracking-wide">Request The Ritual</h2>
+            <p class="text-[#efeae4]/70 font-light text-sm max-w-lg mx-auto">
+                Due to the highly personalized nature of this exclusive experience, availability is strictly limited. Submit your details below, and Adel will contact you personally to curate your session.
+            </p>
+        </div>
+        
+        <form action="https://formspree.io/f/xeedowqd" method="POST" class="space-y-8 max-w-xl mx-auto">
+            <div class="grid md:grid-cols-2 gap-8">
+                <div>
+                    <input type="text" name="name" required class="w-full bg-transparent border-b border-[#a68a69]/40 py-3 text-sm text-[#efeae4] placeholder-[#efeae4]/50 focus:outline-none focus:border-[#a68a69] transition-colors" placeholder="Full Name">
+                </div>
+                <div>
+                    <input type="tel" name="phone" required class="w-full bg-transparent border-b border-[#a68a69]/40 py-3 text-sm text-[#efeae4] placeholder-[#efeae4]/50 focus:outline-none focus:border-[#a68a69] transition-colors" placeholder="Mobile / WhatsApp">
+                </div>
             </div>
             
-            <form action="https://formspree.io/f/xeedowqd" method="POST" class="space-y-6 max-w-2xl mx-auto">
-                <div class="grid md:grid-cols-2 gap-6">
-                    <div>
-                        <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">Full Name</label>
-                        <input type="text" name="name" required class="w-full px-5 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-xl outline-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="Your Name">
-                    </div>
-                    <div>
-                        <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">Mobile / WhatsApp</label>
-                        <input type="tel" name="phone" required class="w-full px-5 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-xl outline-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="+971 50 000 0000">
-                    </div>
-                </div>
-                
-                <div>
-                    <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">Email Address</label>
-                    <input type="email" name="_replyto" required class="w-full px-5 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-xl outline-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="email@example.com">
-                </div>
-                
-                <div class="text-center pt-6">
-                    <button type="submit" class="bg-[#48596b] text-[#efeae4] px-12 py-5 rounded-full tracking-[0.3em] uppercase font-bold text-xs hover:bg-[#a68a69] transition-all w-full md:w-auto shadow-lg hover:-translate-y-1">
-                        Request Contact From Adel
-                    </button>
-                    <p class="text-[9px] text-[#48596b]/40 mt-4 uppercase tracking-widest">
-                        Total Privacy & Discretion Assured.
-                    </p>
-                </div>
-            </form>
-        </div>
+            <div>
+                <input type="email" name="_replyto" required class="w-full bg-transparent border-b border-[#a68a69]/40 py-3 text-sm text-[#efeae4] placeholder-[#efeae4]/50 focus:outline-none focus:border-[#a68a69] transition-colors" placeholder="Email Address">
+            </div>
+            
+            <div class="text-center pt-8">
+                <button type="submit" class="bg-transparent border border-[#a68a69] text-[#a68a69] px-12 py-4 rounded-full tracking-[0.2em] uppercase font-bold text-xs hover:bg-[#a68a69] hover:text-white transition-all w-full md:w-auto shadow-sm">
+                    Request Contact
+                </button>
+                <p class="text-[9px] text-[#efeae4]/40 mt-6 uppercase tracking-widest">
+                    Total Privacy & Discretion Assured.
+                </p>
+            </div>
+        </form>
     </div>
 </section>
 
@@ -856,29 +851,37 @@
 </section>
 
 <!-- Booking Section -->
-<section id="book" class="py-24 max-w-5xl mx-auto px-6 relative">
-    <div class="bg-white rounded-[3rem] p-8 md:p-20 border border-[#a68a69]/20 shadow-sm relative z-10">
+<section id="book" class="py-24 bg-[#efeae4] relative">
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
         <div class="text-center mb-12">
-            <h2 class="text-3xl md:text-5xl font-light text-[#48596b] mb-4 uppercase tracking-[0.2em]">Begin Your Journey</h2>
-            <p class="text-[#7a90a8] font-medium tracking-wide uppercase text-sm">Private & Studio Sessions in Abu Dhabi</p>
+            <h2 class="text-3xl md:text-5xl font-light text-[#48596b] mb-4 uppercase tracking-[0.2em]">Let's Connect</h2>
+            <p class="text-[#7a90a8] font-medium tracking-wide text-sm">Leave your details below, and Adel will get back to you shortly.</p>
         </div>
-        <form id="booking-form" action="https://formspree.io/f/xeedowqd" method="POST" class="space-y-8 max-w-2xl mx-auto">
-            <div class="grid md:grid-cols-2 gap-8">
-                <div>
-                    <label class="block text-xs font-bold text-[#a68a69] mb-3 uppercase">Your Name</label>
-                    <input type="text" name="name" required class="w-full px-6 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-2xl outline-none" placeholder="Name">
+        
+        <form id="booking-form" action="https://formspree.io/f/xeedowqd" method="POST" class="max-w-2xl mx-auto">
+            <!-- Sleek, subtle frosted container instead of a massive white block -->
+            <div class="bg-white/40 backdrop-blur-md p-8 md:p-10 rounded-[2rem] border border-[#a68a69]/10 shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">Your Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 bg-white/60 border border-[#a68a69]/20 rounded-xl outline-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="Name">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">Email / Mobile</label>
+                        <input type="text" name="contact" required class="w-full px-4 py-3 bg-white/60 border border-[#a68a69]/20 rounded-xl outline-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="email or phone number">
+                    </div>
                 </div>
-                <div>
-                    <label class="block text-xs font-bold text-[#a68a69] mb-3 uppercase">Your Email</label>
-                    <input type="email" name="_replyto" required class="w-full px-6 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-2xl outline-none" placeholder="email@example.com">
+                
+                <div class="mb-8">
+                    <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">How can I help you?</label>
+                    <textarea name="message" rows="2" class="w-full px-4 py-3 bg-white/60 border border-[#a68a69]/20 rounded-xl outline-none resize-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="Your question or request..."></textarea>
                 </div>
-            </div>
-            <div>
-                <label class="block text-xs font-bold text-[#a68a69] mb-3 uppercase">How can I help you?</label>
-                <textarea name="message" rows="5" required class="w-full px-6 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-2xl outline-none resize-none" placeholder="Experience level, injuries, or goals..."></textarea>
-            </div>
-            <div class="text-center pt-4">
-                <button type="submit" class="bg-[#48596b] text-[#efeae4] px-12 py-5 rounded-full tracking-[0.3em] uppercase font-bold text-sm hover:bg-[#7a90a8] transition-all w-full md:w-auto">Request a Session</button>
+                
+                <div class="text-center">
+                    <button type="submit" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full tracking-[0.2em] uppercase font-bold text-xs hover:bg-[#7a90a8] transition-all w-full md:w-auto shadow-sm">Submit Inquiry</button>
+                </div>
+                
             </div>
         </form>
     </div>
