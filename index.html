@@ -809,16 +809,187 @@
     <div class="max-w-4xl mx-auto px-6 relative z-10">
         <div class="text-center mb-12">
             <h2 class="text-3xl md:text-5xl font-light text-[#48596b] mb-4 uppercase tracking-[0.2em]">Let's Connect</h2>
+            <p class="text-[#7a90a8] font-medium tracking-wide text-sm">Leave your details below, and Adel will get back to you shortly.</p>
         </div>
+        
+        <form id="booking-form" action="https://formspree.io/f/xeedowqd" method="POST" class="max-w-2xl mx-auto">
+            <!-- Sleek, subtle frosted container instead of a massive white block -->
+            <div class="bg-white/40 backdrop-blur-md p-8 md:p-10 rounded-[2rem] border border-[#a68a69]/10 shadow-[0_4px_30px_rgba(0,0,0,0.02)]">
+                
+                <div class="grid md:grid-cols-2 gap-6 mb-6">
+                    <div>
+                        <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">Your Name</label>
+                        <input type="text" name="name" required class="w-full px-4 py-3 bg-white/60 border border-[#a68a69]/20 rounded-xl outline-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="Name">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">Email / Mobile</label>
+                        <input type="text" name="contact" required class="w-full px-4 py-3 bg-white/60 border border-[#a68a69]/20 rounded-xl outline-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="email or phone number">
+                    </div>
+                </div>
+                
+                <div class="mb-8">
+                    <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">How can I help you?</label>
+                    <textarea name="message" rows="2" class="w-full px-4 py-3 bg-white/60 border border-[#a68a69]/20 rounded-xl outline-none resize-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="Your question or request..."></textarea>
+                </div>
+                
+                <div class="text-center">
+                    <button type="submit" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full tracking-[0.2em] uppercase font-bold text-xs hover:bg-[#7a90a8] transition-all w-full md:w-auto shadow-sm">Submit Inquiry</button>
+                </div>
+                
+            </div>
+        </form>
     </div>
 </section>
 
+<!-- Footer -->
+<footer class="bg-[#48596b] text-[#efeae4] py-16 border-t border-[#a68a69]/20">
+    <div class="max-w-7xl mx-auto px-6 text-center flex flex-col items-center gap-6">
+        <!-- Re-added Footer Logo and Branding Block -->
+        <div class="flex flex-col items-center gap-3">
+            <img src="logo.png" alt="Logo" class="h-16 w-auto object-contain brightness-0 invert opacity-80" onerror="this.style.display='none'">
+            <div class="text-center">
+                <span class="text-base tracking-[0.15em] uppercase font-light text-[#efeae4] block">The Intelligent Body</span>
+                <span class="text-[#a68a69] tracking-[0.12em] uppercase text-[10px] font-semibold mt-1 block">Yoga Academy & Private Mentor</span>
+            </div>
+        </div>
+        <hr class="w-16 border-[#a68a69]/30 my-2">
+        <p class="text-xs font-light text-[#efeae4]/50 tracking-wider">
+            &copy; 2026 The Intelligent Body. All rights reserved.
+        </p>
+    </div>
+</footer>
+
 <script>
+    // Mobile Menu Toggle
     function toggleMenu() {
         const menu = document.getElementById('mobile-menu');
         menu.classList.toggle('hidden');
     }
+
+    // Terms & Conditions Popup Toggle Function
+    function toggleTermsModal(show) {
+        const modal = document.getElementById('terms-modal');
+        if (show) {
+            modal.classList.remove('hidden');
+            document.body.style.overflow = 'hidden'; // Prevents background scrolling
+        } else {
+            modal.classList.add('hidden');
+            document.body.style.overflow = ''; // Restores background scrolling
+        }
+    }
+
+    // Popup Close & Init / AJAX Formspree Redirect Handler
+    document.addEventListener('DOMContentLoaded', () => {
+        const popup = document.getElementById('promo-popup');
+        const closeBtn = document.getElementById('close-popup');
+        
+        if (popup && closeBtn) {
+            // Check sessionStorage so the popup only shows once per browser tab session
+            if (!sessionStorage.getItem('promoPopupShown')) {
+                // Show popup with a slight delay
+                setTimeout(() => {
+                    popup.classList.remove('hidden');
+                    popup.classList.add('flex');
+                    sessionStorage.setItem('promoPopupShown', 'true');
+                }, 1500);
+            }
+
+            closeBtn.addEventListener('click', () => {
+                popup.classList.add('hidden');
+                popup.classList.remove('flex');
+            });
+        }
+
+        // Handle all Formspree form submissions via AJAX to redirect to thank-you page
+        const forms = document.querySelectorAll('form[action*="formspree.io"]');
+        
+        forms.forEach(form => {
+            form.addEventListener('submit', async (e) => {
+                e.preventDefault(); // Stop default Formspree redirect behavior
+                
+                const formData = new FormData(form);
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerText;
+                
+                btn.innerText = 'Submitting...';
+                btn.disabled = true;
+                btn.style.opacity = '0.7';
+                
+                try {
+                    const response = await fetch(form.action, {
+                        method: 'POST',
+                        body: formData,
+                        headers: { 'Accept': 'application/json' }
+                    });
+                    
+                    if (response.ok) {
+                        btn.innerText = 'Request Received';
+                        btn.classList.add('bg-[#a68a69]');
+                        setTimeout(() => {
+                            // Successfully sent! Redirect to custom thank-you page
+                            window.location.href = "https://theintelligentbody.ae/thank-you";
+                        }, 1000);
+                    } else {
+                        alert('Oops! There was a problem submitting your form. Please try again.');
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                        btn.style.opacity = '1';
+                    }
+                } catch (error) {
+                    alert('Network error. Please check your connection and try again.');
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                }
+            });
+        });
+    });
 </script>
 
+<!-- Terms & Conditions Popup Modal -->
+<div id="terms-modal" class="hidden fixed inset-0 z-[110] bg-[#48596b]/60 backdrop-blur-sm flex items-center justify-center p-4">
+    <div class="bg-[#efeae4] rounded-[2rem] shadow-2xl w-full max-w-2xl relative overflow-hidden border border-[#a68a69]/20 flex flex-col max-h-[85vh]">
+        
+        <!-- Header Section -->
+        <div class="p-6 md:p-8 border-b border-[#a68a69]/20 flex justify-between items-center bg-white">
+            <h3 class="text-xl font-light text-[#48596b] uppercase tracking-widest">Terms & Conditions</h3>
+            <button onclick="toggleTermsModal(false)" class="text-[#48596b]/60 hover:text-[#48596b] transition-colors p-2" aria-label="Close Terms">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+            </button>
+        </div>
+        
+        <!-- Content Container (Scrollable) -->
+        <div class="p-6 md:p-8 overflow-y-auto space-y-6 text-sm text-[#48596b]/90 font-light leading-relaxed">
+            
+            <div>
+                <h4 class="font-medium text-[#a68a69] uppercase tracking-wider text-xs mb-2">1. Registration & Registration Policies</h4>
+                <p>By submitting this form, you are registering your interest in our RYT-200 hour teacher training. Your spot is not finalized until we’ve had a chance to connect, answer all your questions, and you have submitted your final confirmation and deposit.</p>
+            </div>
+            
+            <div>
+                <h4 class="font-medium text-[#a68a69] uppercase tracking-wider text-xs mb-2">2. Early Bird Pricing Terms</h4>
+                <p>Early bird tuition rates apply uniquely to packages validated and deposited fully prior to August 31, 2026. Standard program rates apply thereafter.</p>
+            </div>
+            
+            <div>
+                <h4 class="font-medium text-[#a68a69] uppercase tracking-wider text-xs mb-2">3. Cancellation & Attendance Policy</h4>
+                <p>A non-refundable deposit of AED 2000 is required to secure a student's place in the training. Students may cancel their registration up to 30 days before the training begins and receive a refund of all tuition paid, minus the non-refundable deposit. No refunds will be issued once the training has started. If a student is dismissed from the training due to violations of the school's policies, code of conduct, or unethical behavior, no full or partial refund will be provided. Any approved refunds will be processed within 30 days of the cancellation request.</p>
+            </div>
+
+            <div>
+                <h4 class="font-medium text-[#a68a69] uppercase tracking-wider text-xs mb-2">4. Program Modification Parameters</h4>
+                <p>The Intelligent Body Academy holds foundational rights to dynamically optimize schedules or modules to align with unforeseen structural or community constraints.</p>
+            </div>
+
+        </div>
+        
+        <!-- Footer Action Button -->
+        <div class="p-6 border-t border-[#a68a69]/20 text-center bg-white">
+            <button onclick="toggleTermsModal(false)" class="bg-[#48596b] text-[#efeae4] px-8 py-3 rounded-full tracking-widest uppercase text-xs font-bold hover:bg-[#7a90a8] transition-all min-w-[160px]">
+                I Understand
+            </button>
+        </div>
+    </div>
+</div>
 </body>
 </html>
