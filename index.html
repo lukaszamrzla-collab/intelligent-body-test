@@ -25,6 +25,7 @@
         body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
         .selection-theme::selection { background-color: #aecae8; color: #48596b; }
         .fade-in { animation: fadeIn 0.8s ease-in-out forwards; }
+        .fade-in-delayed { animation: fadeIn 1.2s ease-out 0.3s forwards; opacity: 0; }
         @keyframes fadeIn { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
         
         /* Popup Animation */
@@ -34,6 +35,28 @@
         }
         .animate-pop-in { animation: popIn 0.4s ease-out forwards; }
         
+        /* Premium Image Fallbacks & Ritual Styles */
+        .premium-placeholder {
+            background: linear-gradient(135deg, #efeae4 0%, #dfd9d2 100%);
+            position: relative;
+            overflow: hidden;
+        }
+        .premium-placeholder::after {
+            content: '';
+            position: absolute;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background-image: radial-gradient(circle at top right, rgba(166,138,105,0.1), transparent 50%);
+        }
+
+        /* Subtle floating animation for background blobs */
+        @keyframes float {
+            0% { transform: translate(0px, 0px) scale(1); }
+            33% { transform: translate(30px, -50px) scale(1.1); }
+            66% { transform: translate(-20px, 20px) scale(0.9); }
+            100% { transform: translate(0px, 0px) scale(1); }
+        }
+        .animate-float { animation: float 15s infinite ease-in-out; }
+
         @media (max-width: 768px) {
             footer { padding-bottom: 80px; }
         }
@@ -77,10 +100,10 @@
                 </div>
             </a>
             
-            <!-- Desktop Menu (Updated order) -->
+            <!-- Desktop Menu (Updated with Signature Ritual) -->
             <div class="hidden lg:flex items-center gap-5 xl:gap-8 text-[13px] xl:text-sm tracking-widest uppercase font-medium whitespace-nowrap">
                 <a href="#academy" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
-                <a href="#offerings" class="hover:text-[#7a90a8] transition-colors">Offerings</a>
+                <a href="#signature-ritual" class="hover:text-[#7a90a8] transition-colors">The Signature Ritual</a>
                 <a href="#philosophy" class="hover:text-[#7a90a8] transition-colors">Philosophy</a>
                 <a href="#testimonials" class="hover:text-[#7a90a8] transition-colors">Testimonials</a>
                 <a href="#book" class="bg-[#48596b] text-[#efeae4] px-5 xl:px-6 py-2.5 rounded-full hover:bg-[#7a90a8] transition-all shadow-sm">Book a Session</a>
@@ -94,7 +117,7 @@
     </div>
 </nav>
 
-<!-- Mobile Menu Overlay (Updated order) -->
+<!-- Mobile Menu Overlay -->
 <div id="mobile-menu" class="hidden fixed inset-0 z-[60] bg-[#efeae4] flex flex-col items-center justify-center">
     <button class="absolute top-10 right-10 text-[#48596b]" onclick="toggleMenu()">
         <svg xmlns="http://www.w3.org/2000/svg" width="32" height="32" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
@@ -105,7 +128,7 @@
     </div>
     <div class="flex flex-col items-center gap-6 text-xl tracking-[0.2em] uppercase font-light">
         <a href="#academy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
-        <a href="#offerings" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Offerings</a>
+        <a href="#signature-ritual" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">The Signature Ritual</a>
         <a href="#philosophy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Philosophy</a>
         <a href="#testimonials" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Testimonials</a>
         <a href="#book" onclick="toggleMenu()" class="bg-[#48596b] text-[#efeae4] px-10 py-4 rounded-full mt-4">Book a Session</a>
@@ -446,8 +469,262 @@
     </div>
 </section>
 
+<!-- ======================= -->
+<!-- THE SIGNATURE RITUAL -->
+<!-- ======================= -->
+
+<!-- Hero Section (Dark, Exclusive Vibe) -->
+<section id="signature-ritual" class="relative py-24 md:py-32 bg-[#48596b] text-[#efeae4] overflow-hidden min-h-[85vh] flex items-center">
+    <!-- Ambient Background Blobs -->
+    <div class="absolute top-0 right-0 w-[500px] h-[500px] bg-[#a68a69] rounded-full mix-blend-multiply filter blur-[120px] opacity-20 animate-float"></div>
+    <div class="absolute bottom-0 left-0 w-[600px] h-[600px] bg-[#7a90a8] rounded-full mix-blend-multiply filter blur-[150px] opacity-30 animate-float" style="animation-delay: -5s;"></div>
+    
+    <div class="max-w-7xl mx-auto px-6 lg:px-12 relative z-10 w-full text-center">
+        <div class="fade-in">
+            <span class="text-[#a68a69] tracking-[0.4em] uppercase text-[10px] md:text-xs font-bold mb-6 block">An Unprecedented Wellness Standard</span>
+            <h1 class="text-5xl md:text-7xl lg:text-8xl font-light mb-8 leading-[1.1]">
+                The <span class="italic text-[#a68a69]">Signature</span> <br> Ritual
+            </h1>
+            <div class="w-24 h-[1px] bg-[#a68a69]/50 mx-auto mb-8"></div>
+            <p class="text-lg md:text-xl text-[#efeae4]/80 max-w-2xl mx-auto font-light leading-relaxed mb-12">
+                A 90-minute bespoke wellness sanctuary brought directly to the privacy of your home. Align your body, command your mind, and invest in profound longevity without ever stepping outside your door.
+            </p>
+            
+            <a href="#ritual-inquiry" class="inline-block bg-transparent border border-[#a68a69] text-[#a68a69] hover:bg-[#a68a69] hover:text-white px-10 py-4 rounded-full tracking-[0.2em] uppercase text-xs font-bold transition-all duration-300">
+                Inquire For Availability
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- The Philosophy / Story -->
+<section id="ritual-philosophy" class="py-24 md:py-32 bg-[#efeae4] relative">
+    <div class="max-w-4xl mx-auto px-6 text-center">
+        <svg xmlns="http://www.w3.org/2000/svg" class="mx-auto text-[#a68a69] mb-8 w-12 h-12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+        
+        <h2 class="text-3xl md:text-4xl font-light text-[#48596b] tracking-[0.15em] uppercase mb-10 leading-relaxed">
+            Time is the ultimate luxury. <br> <span class="text-[#a68a69] italic">We make yours profound.</span>
+        </h2>
+        
+        <div class="text-base md:text-lg text-[#48596b]/80 font-light leading-loose text-justify md:text-center space-y-6">
+            <p>
+                True wellness is not merely the absence of stress, but the presence of vibrant, aligned energy. For those carrying the weight of leadership, legacy, and exceptional ambition, standard practices fall short. The Signature Ritual was meticulously architected to bridge the gap between ancient Eastern wisdom and modern biological optimization, delivered exclusively within the walls of your own private residence.
+            </p>
+            <p>
+                This is not a yoga class. It is an immersive, 90-minute in-home protocol tailored entirely to your unique physiology and mental state on the day of your session. By combining rare botanical traditions with master-level movement and stillness, we initiate a profound recalibration of your nervous system.
+            </p>
+            <p class="font-medium text-[#a68a69] mt-6">
+                Every session is exclusively designed and personally guided by our founder, Adel. Holding the highest Yoga Alliance E-RYT 500 certification alongside a Master of Education, Adel delivers an unparalleled standard of professional quality, anatomical precision, and a deeply healthy approach to your holistic well-being.
+            </p>
+        </div>
+    </div>
+</section>
+
+<!-- The Journey (Step-by-Step) -->
+<section id="ritual-journey" class="py-24 bg-white border-y border-[#a68a69]/10">
+    <div class="max-w-6xl mx-auto px-6">
+        <div class="text-center mb-20">
+            <span class="text-[#a68a69] tracking-[0.3em] uppercase text-xs font-bold mb-3 block">The 90-Minute Protocol</span>
+            <h2 class="text-4xl md:text-5xl font-light text-[#48596b] uppercase tracking-[0.15em]">The Journey</h2>
+        </div>
+
+        <div class="relative">
+            <!-- Vertical Line (Desktop only) -->
+            <div class="hidden md:block absolute left-1/2 transform -translate-x-1/2 w-[1px] h-full bg-[#a68a69]/20"></div>
+
+            <!-- Step 1: The Arrival -->
+            <div class="flex flex-col md:flex-row items-center justify-between mb-24 relative">
+                <div class="hidden md:flex w-12 h-12 absolute left-1/2 transform -translate-x-1/2 bg-white border-2 border-[#a68a69] rounded-full items-center justify-center z-10 shadow-sm text-[#a68a69] text-sm font-bold">01</div>
+                
+                <div class="w-full md:w-[45%] text-left md:pr-10 mb-8 md:mb-0">
+                    <span class="text-[10px] text-[#7a90a8] tracking-[0.2em] uppercase font-bold mb-2 block">Minute 0 - 15</span>
+                    <h3 class="text-2xl font-light text-[#48596b] mb-4 uppercase tracking-widest">The Arrival</h3>
+                    <p class="text-sm leading-relaxed text-[#48596b]/80 font-light">
+                        We commence the transition from the demands of your day into a state of supreme receptivity. You are served a ceremonial cup of top-grade Gyokuro—Japan's rarest shaded green tea—presented in high-end, artisanal ceramics. Rich in L-theanine, it instantly lowers cortisol while elevating cognitive focus, priming your biochemistry for the physical practice.
+                    </p>
+                </div>
+                <div class="w-full md:w-[45%] h-64 md:h-80 rounded-[2rem] premium-placeholder border border-[#a68a69]/20 flex items-center justify-center relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1599321955726-e04842669811?auto=format&fit=crop&q=80&w=800" alt="Gyokuro Tea" class="w-full h-full object-cover absolute inset-0 opacity-80 group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 bg-[#48596b]/10 mix-blend-multiply"></div>
+                </div>
+            </div>
+
+            <!-- Step 2: The Alignment -->
+            <div class="flex flex-col md:flex-row-reverse items-center justify-between mb-24 relative">
+                <div class="hidden md:flex w-12 h-12 absolute left-1/2 transform -translate-x-1/2 bg-white border-2 border-[#a68a69] rounded-full items-center justify-center z-10 shadow-sm text-[#a68a69] text-sm font-bold">02</div>
+                
+                <div class="w-full md:w-[45%] text-left md:pl-10 mb-8 md:mb-0">
+                    <span class="text-[10px] text-[#7a90a8] tracking-[0.2em] uppercase font-bold mb-2 block">Minute 15 - 60</span>
+                    <h3 class="text-2xl font-light text-[#48596b] mb-4 uppercase tracking-widest">The Alignment</h3>
+                    <p class="text-sm leading-relaxed text-[#48596b]/80 font-light">
+                        A masterfully curated, bespoke yoga sequence designed exclusively for your anatomy, enveloped by bespoke ambient soundscapes and signature aromatherapy. Whether recovering from travel, releasing postural tension, or building functional strength, this gentle yet profound movement practice clears fascial blockages, floods the tissue with oxygen, and aligns the physical body.
+                    </p>
+                </div>
+                <div class="w-full md:w-[45%] h-64 md:h-80 rounded-[2rem] premium-placeholder border border-[#a68a69]/20 flex items-center justify-center relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1593811167562-9cef47bfc4d7?auto=format&fit=crop&q=80&w=800" alt="Bespoke Yoga" class="w-full h-full object-cover absolute inset-0 opacity-80 group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 bg-[#a68a69]/10 mix-blend-multiply"></div>
+                </div>
+            </div>
+
+            <!-- Step 3: The Stillness -->
+            <div class="flex flex-col md:flex-row items-center justify-between mb-24 relative">
+                <div class="hidden md:flex w-12 h-12 absolute left-1/2 transform -translate-x-1/2 bg-white border-2 border-[#a68a69] rounded-full items-center justify-center z-10 shadow-sm text-[#a68a69] text-sm font-bold">03</div>
+                
+                <div class="w-full md:w-[45%] text-left md:pr-10 mb-8 md:mb-0">
+                    <span class="text-[10px] text-[#7a90a8] tracking-[0.2em] uppercase font-bold mb-2 block">Minute 60 - 75</span>
+                    <h3 class="text-2xl font-light text-[#48596b] mb-4 uppercase tracking-widest">The Stillness</h3>
+                    <p class="text-sm leading-relaxed text-[#48596b]/80 font-light">
+                        Guided by professional clinical-grade meditation techniques, you are led into a deep state of conscious relaxation (Yoga Nidra). This phase lowers brain wave frequencies from Beta to Alpha and Theta states, systematically eradicating executive stress, fostering immense mental clarity, and resetting the central nervous system.
+                    </p>
+                </div>
+                <div class="w-full md:w-[45%] h-64 md:h-80 rounded-[2rem] premium-placeholder border border-[#a68a69]/20 flex items-center justify-center relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1544367567-0f2fcb009e0b?auto=format&fit=crop&q=80&w=800" alt="Meditation" class="w-full h-full object-cover absolute inset-0 opacity-80 group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 bg-[#48596b]/20 mix-blend-multiply"></div>
+                </div>
+            </div>
+
+            <!-- Step 4: The Integration -->
+            <div class="flex flex-col md:flex-row-reverse items-center justify-between relative">
+                <div class="hidden md:flex w-12 h-12 absolute left-1/2 transform -translate-x-1/2 bg-[#a68a69] rounded-full items-center justify-center z-10 shadow-lg text-white text-sm font-bold">04</div>
+                
+                <div class="w-full md:w-[45%] text-left md:pl-10 mb-8 md:mb-0">
+                    <span class="text-[10px] text-[#a68a69] tracking-[0.2em] uppercase font-bold mb-2 block">Minute 75 - 90</span>
+                    <h3 class="text-2xl font-light text-[#48596b] mb-4 uppercase tracking-widest">The Integration</h3>
+                    <p class="text-sm leading-relaxed text-[#48596b]/80 font-light">
+                        We close the sanctuary space with a meditative whisking of ultra-premium Ceremonial Grade Matcha in bespoke ceramics, or a selection of rare herbal infusions. This final ritual anchors the mind back into the present moment, delivering potent antioxidants to support longevity, leaving you invigorated, clear, and perfectly centered to conquer your day.
+                    </p>
+                </div>
+                <div class="w-full md:w-[45%] h-64 md:h-80 rounded-[2rem] premium-placeholder border border-[#a68a69]/20 flex items-center justify-center relative overflow-hidden group">
+                    <img src="https://images.unsplash.com/photo-1582793988951-9aed550c9da2?auto=format&fit=crop&q=80&w=800" alt="Matcha Ritual" class="w-full h-full object-cover absolute inset-0 opacity-80 group-hover:scale-105 transition-transform duration-700" onerror="this.style.display='none'">
+                    <div class="absolute inset-0 bg-[#a68a69]/10 mix-blend-multiply"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- Outcomes Section -->
+<section id="ritual-benefits" class="py-24 bg-[#efeae4]">
+    <div class="max-w-7xl mx-auto px-6">
+        <div class="grid lg:grid-cols-2 gap-16 items-center">
+            
+            <div class="order-2 lg:order-1">
+                <div class="grid sm:grid-cols-2 gap-6">
+                    <div class="bg-white p-8 rounded-[2rem] border border-[#a68a69]/10 shadow-sm">
+                        <div class="w-10 h-10 rounded-full bg-[#aecae8]/30 flex items-center justify-center mb-6 text-[#48596b]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2v20M17 5H9.5a3.5 3.5 0 0 0 0 7h5a3.5 3.5 0 0 1 0 7H6"/></svg>
+                        </div>
+                        <h4 class="text-sm font-bold text-[#48596b] uppercase tracking-widest mb-3">Total Wellness</h4>
+                        <p class="text-xs text-[#48596b]/70 font-light leading-relaxed">A holistic recalibration of the mind, body, and spirit, transcending standard fitness routines.</p>
+                    </div>
+                    <div class="bg-[#a68a69]/10 p-8 rounded-[2rem] border border-[#a68a69]/20 shadow-sm mt-0 sm:mt-8">
+                        <div class="w-10 h-10 rounded-full bg-white flex items-center justify-center mb-6 text-[#a68a69]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="10"/><polyline points="12 6 12 12 16 14"/></svg>
+                        </div>
+                        <h4 class="text-sm font-bold text-[#48596b] uppercase tracking-widest mb-3">Supports Longevity</h4>
+                        <p class="text-xs text-[#48596b]/70 font-light leading-relaxed">Potent antioxidants from rare teas combined with breathwork enhance cellular health and lifespan.</p>
+                    </div>
+                    <div class="bg-[#48596b] p-8 rounded-[2rem] shadow-sm text-white">
+                        <div class="w-10 h-10 rounded-full bg-white/10 flex items-center justify-center mb-6 text-white">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 12h-4l-3 9L9 3l-3 9H2"/></svg>
+                        </div>
+                        <h4 class="text-sm font-bold uppercase tracking-widest mb-3">Lowers Stress</h4>
+                        <p class="text-xs text-white/70 font-light leading-relaxed">Clinically proven meditation techniques lower cortisol, stopping the executive stress loop instantly.</p>
+                    </div>
+                    <div class="bg-white p-8 rounded-[2rem] border border-[#a68a69]/10 shadow-sm mt-0 sm:mt-8">
+                        <div class="w-10 h-10 rounded-full bg-[#aecae8]/30 flex items-center justify-center mb-6 text-[#48596b]">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 8h1a4 4 0 0 1 0 8h-1"/><path d="M2 8h16v9a4 4 0 0 1-4 4H6a4 4 0 0 1-4-4V8z"/><line x1="6" y1="1" x2="6" y2="4"/><line x1="10" y1="1" x2="10" y2="4"/><line x1="14" y1="1" x2="14" y2="4"/></svg>
+                        </div>
+                        <h4 class="text-sm font-bold text-[#48596b] uppercase tracking-widest mb-3">Aligns Body</h4>
+                        <p class="text-xs text-[#48596b]/70 font-light leading-relaxed">Bespoke anatomical focus corrects posture, prevents injury, and restores natural fluid movement.</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order-1 lg:order-2 text-center lg:text-left">
+                <span class="text-[#a68a69] tracking-[0.3em] uppercase text-xs font-bold mb-4 block">The Investment in Self</span>
+                <h2 class="text-4xl md:text-5xl font-light text-[#48596b] uppercase tracking-[0.15em] mb-6 leading-tight">
+                    Return to <br> <span class="italic text-[#7a90a8]">Brilliance</span>
+                </h2>
+                <p class="text-base text-[#48596b]/80 font-light leading-relaxed mb-8 max-w-lg mx-auto lg:mx-0">
+                    Your environment dictates your performance. We bring this absolute sanctuary directly to your private villa, estate, or yacht in Abu Dhabi. Every detail—from the temperature of the water used for the tea to the specific essential oils in the air—is calibrated for your ultimate rejuvenation.
+                </p>
+                
+                <!-- Pricing Card -->
+                <div class="bg-white p-6 rounded-3xl border border-[#a68a69]/20 shadow-sm mb-8 inline-block text-left w-full max-w-sm">
+                    <div class="flex justify-between items-end border-b border-[#a68a69]/10 pb-4 mb-4">
+                        <div>
+                            <span class="block text-[10px] text-[#7a90a8] uppercase tracking-widest font-bold mb-1">Single Session</span>
+                            <span class="block text-sm text-[#48596b] font-light">90-Minute Signature Ritual</span>
+                        </div>
+                        <span class="text-lg text-[#a68a69] font-medium tracking-wide">AED 1,200</span>
+                    </div>
+                    <div class="flex justify-between items-end">
+                        <div>
+                            <span class="block text-[10px] text-[#7a90a8] uppercase tracking-widest font-bold mb-1">Master Package</span>
+                            <span class="block text-sm text-[#48596b] font-light">10 Signature Rituals</span>
+                        </div>
+                        <span class="text-lg text-[#a68a69] font-medium tracking-wide">AED 10,000</span>
+                    </div>
+                </div>
+
+                <div class="flex items-center gap-4 justify-center lg:justify-start">
+                    <span class="block w-12 h-[1px] bg-[#a68a69]"></span>
+                    <span class="text-[10px] uppercase tracking-widest font-semibold text-[#a68a69]">Exclusively by Appointment</span>
+                </div>
+            </div>
+            
+        </div>
+    </div>
+</section>
+
+<!-- Booking / Application Section -->
+<section id="ritual-inquiry" class="py-24 bg-[#48596b] relative overflow-hidden">
+    <!-- Decorative background elements -->
+    <div class="absolute top-0 right-0 w-[400px] h-[400px] bg-[#aecae8] rounded-full mix-blend-overlay filter blur-[100px] opacity-10"></div>
+    
+    <div class="max-w-4xl mx-auto px-6 relative z-10">
+        <div class="bg-white rounded-[3rem] p-10 md:p-16 border border-[#a68a69]/30 shadow-2xl">
+            <div class="text-center mb-12">
+                <span class="text-[#a68a69] tracking-[0.3em] uppercase text-[10px] font-bold mb-3 block">Private Client Application</span>
+                <h2 class="text-3xl md:text-4xl font-light text-[#48596b] mb-4 uppercase tracking-[0.15em]">Request The Ritual</h2>
+                <p class="text-[#48596b]/60 font-light text-sm max-w-lg mx-auto">
+                    Due to the highly personalized nature of this exclusive in-home experience, availability is strictly limited. Please submit your details below, and Adel will contact you personally to curate your session.
+                </p>
+            </div>
+            
+            <form action="https://formspree.io/f/xeedowqd" method="POST" class="space-y-6 max-w-2xl mx-auto">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">Full Name</label>
+                        <input type="text" name="name" required class="w-full px-5 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-xl outline-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="Your Name">
+                    </div>
+                    <div>
+                        <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">Mobile / WhatsApp</label>
+                        <input type="tel" name="phone" required class="w-full px-5 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-xl outline-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="+971 50 000 0000">
+                    </div>
+                </div>
+                
+                <div>
+                    <label class="block text-[10px] font-bold text-[#a68a69] mb-2 uppercase tracking-widest">Email Address</label>
+                    <input type="email" name="_replyto" required class="w-full px-5 py-4 bg-[#efeae4]/30 border border-[#a68a69]/20 rounded-xl outline-none focus:border-[#a68a69] transition-colors text-sm text-[#48596b] placeholder-[#48596b]/40" placeholder="email@example.com">
+                </div>
+                
+                <div class="text-center pt-6">
+                    <button type="submit" class="bg-[#48596b] text-[#efeae4] px-12 py-5 rounded-full tracking-[0.3em] uppercase font-bold text-xs hover:bg-[#a68a69] transition-all w-full md:w-auto shadow-lg hover:-translate-y-1">
+                        Request Contact From Adel
+                    </button>
+                    <p class="text-[9px] text-[#48596b]/40 mt-4 uppercase tracking-widest">
+                        Total Privacy & Discretion Assured.
+                    </p>
+                </div>
+            </form>
+        </div>
+    </div>
+</section>
+
 <!-- Offerings Section -->
-<section id="offerings" class="py-24 bg-white">
+<section id="offerings" class="py-24 bg-white border-t border-[#a68a69]/10">
     <div class="max-w-7xl mx-auto px-6">
         <div class="text-center mb-16">
             <h2 class="text-3xl md:text-5xl font-light text-[#48596b] mb-4 uppercase tracking-[0.2em]">Ways to Practice</h2>
@@ -634,6 +911,12 @@
                 e.preventDefault(); // Stop default Formspree redirect behavior
                 
                 const formData = new FormData(form);
+                const btn = form.querySelector('button[type="submit"]');
+                const originalText = btn.innerText;
+                
+                btn.innerText = 'Submitting...';
+                btn.disabled = true;
+                btn.style.opacity = '0.7';
                 
                 try {
                     const response = await fetch(form.action, {
@@ -643,13 +926,23 @@
                     });
                     
                     if (response.ok) {
-                        // Successfully sent! Redirect to custom thank-you page
-                        window.location.href = "https://theintelligentbody.ae/thank-you";
+                        btn.innerText = 'Request Received';
+                        btn.classList.add('bg-[#a68a69]');
+                        setTimeout(() => {
+                            // Successfully sent! Redirect to custom thank-you page
+                            window.location.href = "https://theintelligentbody.ae/thank-you";
+                        }, 1000);
                     } else {
                         alert('Oops! There was a problem submitting your form. Please try again.');
+                        btn.innerText = originalText;
+                        btn.disabled = false;
+                        btn.style.opacity = '1';
                     }
                 } catch (error) {
                     alert('Network error. Please check your connection and try again.');
+                    btn.innerText = originalText;
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
                 }
             });
         });
