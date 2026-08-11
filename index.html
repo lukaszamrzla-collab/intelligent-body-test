@@ -15,27 +15,55 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
 <!-- 1. Primary SEO Title Tag (50–60 Characters max) -->
-<title>The Intelligent Body | 200Hr YTT & Private Yoga Abu Dhabi</title>
+<title>The Intelligent Body | 200Hr YTT, Private YTT & The Ritual Abu Dhabi</title>
 
 <!-- 2. Primary SEO Meta Description (150–160 Characters max) -->
-<meta name="description" content="Abu Dhabi's premier yoga mentor. Offering 200-Hour YTT certification, The Signature Ritual in-home sanctuary, private sessions, and corporate wellness.">
+<meta name="description" content="Abu Dhabi's premier yoga mentor. Offering 200-Hour YTT certification, Private At-Home YTT, The Signature Ritual in-home sanctuary, private sessions, and corporate wellness.">
 
-<!-- 3. Canonical Tag (tells Google this is the official domain) -->
+<!-- 3. SEO Keywords -->
+<meta name="keywords" content="Yoga Abu Dhabi, 200-Hour YTT, Private YTT, The Signature Ritual, Private Yoga Mentor, Corporate Wellness, Yoga Alliance Certification, Adel Yoga">
+
+<!-- 4. Canonical Tag (tells Google this is the official domain) -->
 <link rel="canonical" href="https://theintelligentbody.ae/">
 
-<!-- 4. Open Graph / WhatsApp / Facebook Link Preview Tags -->
+<!-- 5. Open Graph / WhatsApp / Facebook Link Preview Tags -->
 <meta property="og:type" content="website">
 <meta property="og:url" content="https://theintelligentbody.ae/">
-<meta property="og:title" content="The Intelligent Body | Yoga Academy Abu Dhabi">
-<meta property="og:description" content="200-Hour Yoga Alliance Certification, The Signature Ritual, Private Guidance, & Corporate Wellness in Abu Dhabi.">
+<meta property="og:title" content="The Intelligent Body | Yoga Academy, Private YTT & The Ritual Abu Dhabi">
+<meta property="og:description" content="200-Hour Yoga Alliance Certification, Private At-Home YTT, The Signature Ritual, Private Guidance, & Corporate Wellness in Abu Dhabi.">
 <meta property="og:image" content="https://theintelligentbody.ae/profile.png">
 <meta property="og:site_name" content="The Intelligent Body">
 
-<!-- 5. Twitter / X Link Preview Tags -->
+<!-- 6. Twitter / X Link Preview Tags -->
 <meta name="twitter:card" content="summary_large_image">
-<meta name="twitter:title" content="The Intelligent Body | Yoga Academy Abu Dhabi">
-<meta name="twitter:description" content="200-Hour Yoga Alliance Certification, The Signature Ritual, Private Guidance, & Corporate Wellness in Abu Dhabi.">
+<meta name="twitter:title" content="The Intelligent Body | Yoga Academy, Private YTT & The Ritual Abu Dhabi">
+<meta name="twitter:description" content="200-Hour Yoga Alliance Certification, Private At-Home YTT, The Signature Ritual, Private Guidance, & Corporate Wellness in Abu Dhabi.">
 <meta name="twitter:image" content="https://theintelligentbody.ae/profile.png">
+
+<!-- 7. Local Business Schema.org JSON-LD -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "HealthAndBeautyBusiness",
+  "name": "The Intelligent Body",
+  "image": "https://theintelligentbody.ae/logo.png",
+  "url": "https://theintelligentbody.ae/",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "Abu Dhabi",
+    "addressCountry": "AE"
+  },
+  "founder": {
+    "@type": "Person",
+    "name": "Adel"
+  },
+  "description": "Abu Dhabi's premier yoga mentor offering 200-Hour YTT, Private At-Home YTT, The Signature Ritual, private sessions, and corporate wellness.",
+  "sameAs": [
+    "https://www.instagram.com/",
+    "https://www.linkedin.com/"
+  ]
+}
+</script>
 
 <!-- Favicon -->
 <link rel="icon" type="image/png" href="logo.png">
@@ -123,12 +151,29 @@
                 </div>
             </a>
             
-            <!-- Desktop Menu (Testimonials removed) -->
+            <!-- Desktop Menu -->
             <div class="hidden lg:flex items-center gap-6 xl:gap-10 text-[13px] xl:text-sm tracking-widest uppercase font-medium whitespace-nowrap">
                 <a href="#academy" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
                 <a href="#signature-ritual" class="hover:text-[#7a90a8] transition-colors">The Signature Ritual</a>
                 <a href="#private-session" class="hover:text-[#7a90a8] transition-colors">Private Session</a>
                 <a href="#corporate-wellness" class="hover:text-[#7a90a8] transition-colors">Corporate Wellness</a>
+                
+                <!-- Desktop Dropdown -->
+                <div class="relative group py-4 cursor-pointer">
+                    <span class="hover:text-[#7a90a8] transition-colors flex items-center gap-1 text-[#48596b]">
+                        MENU 
+                        <svg class="w-4 h-4 ml-0.5" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path></svg>
+                    </span>
+                    <div class="absolute right-0 top-full mt-[-10px] w-56 bg-[#efeae4]/95 backdrop-blur-md border border-[#a68a69]/20 rounded-xl shadow-lg opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-all duration-300 flex flex-col py-3 z-50">
+                        <a href="#academy" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">Teacher Academy</a>
+                        <a href="#private-ytt" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">Private YTT</a>
+                        <a href="#signature-ritual" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">The Signature Ritual</a>
+                        <a href="#private-session" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">Private Session</a>
+                        <a href="#corporate-wellness" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">Corporate Wellness</a>
+                        <a href="#philosophy" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">About</a>
+                        <a href="#book" class="px-6 py-2.5 hover:bg-[#dfd9d2] text-[#48596b] hover:text-[#a68a69] transition-colors">Contact Us</a>
+                    </div>
+                </div>
             </div>
             
             <!-- Mobile Menu Toggle -->
@@ -150,9 +195,12 @@
     </div>
     <div class="flex flex-col items-center gap-6 text-xl tracking-[0.2em] uppercase font-light">
         <a href="#academy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors text-[#a68a69]">Teacher Academy</a>
+        <a href="#private-ytt" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Private YTT</a>
         <a href="#signature-ritual" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">The Signature Ritual</a>
         <a href="#private-session" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Private Session</a>
         <a href="#corporate-wellness" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Corporate Wellness</a>
+        <a href="#philosophy" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">About</a>
+        <a href="#book" onclick="toggleMenu()" class="hover:text-[#7a90a8] transition-colors">Contact Us</a>
     </div>
 </div>
 
@@ -1069,6 +1117,17 @@
                 <span class="text-[#a68a69] tracking-[0.12em] uppercase text-[10px] font-semibold mt-1 block">Yoga Academy & Private Mentor</span>
             </div>
         </div>
+
+        <!-- NEW: Social Media Links -->
+        <div class="flex items-center gap-5 mt-2">
+            <a href="https://instagram.com/" target="_blank" rel="noopener noreferrer" class="text-[#efeae4]/70 hover:text-[#a68a69] transition-colors" aria-label="Instagram">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+            </a>
+            <a href="https://linkedin.com/" target="_blank" rel="noopener noreferrer" class="text-[#efeae4]/70 hover:text-[#a68a69] transition-colors" aria-label="LinkedIn">
+                <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path><rect x="2" y="9" width="4" height="12"></rect><circle cx="4" cy="4" r="2"></circle></svg>
+            </a>
+        </div>
+
         <hr class="w-16 border-[#a68a69]/30 my-2">
         <p class="text-xs font-light text-[#efeae4]/50 tracking-wider">
             &copy; 2026 The Intelligent Body. All rights reserved.
