@@ -1152,9 +1152,19 @@
 </section>
 
 <!-- Footer -->
-<footer class="bg-[#48596b] text-[#efeae4] py-16 border-t border-[#a68a69]/20">
-    <div class="max-w-7xl mx-auto px-6 text-center flex flex-col items-center gap-6">
-        <!-- Re-added Footer Logo and Branding Block -->
+<footer class="relative bg-[#48596b] text-[#efeae4] pt-20 pb-12">
+    
+    <!-- Top Animated Wave Divider -->
+    <div class="absolute top-0 left-0 w-full overflow-hidden leading-none -translate-y-[99%] pointer-events-none z-10">
+        <svg class="relative block w-[200%] h-[60px] md:h-[100px] animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+            <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#48596b"></path>
+        </svg>
+    </div>
+
+    <!-- Main Footer Content -->
+    <div class="max-w-7xl mx-auto px-6 text-center flex flex-col items-center gap-6 relative z-20">
+        
+        <!-- Footer Logo and Branding Block -->
         <div class="flex flex-col items-center gap-3">
             <img src="logo.png" alt="Logo" class="h-16 w-auto object-contain brightness-0 invert opacity-80" onerror="this.style.display='none'">
             <div class="text-center">
@@ -1163,7 +1173,7 @@
             </div>
         </div>
 
-        <!-- NEW: Social Media Links -->
+        <!-- Social Media Links -->
         <div class="flex items-center gap-5 mt-2">
             <a href="https://www.instagram.com/theintelligentbody.ae/" target="_blank" rel="noopener noreferrer" class="text-[#efeae4]/70 hover:text-[#a68a69] transition-colors" aria-label="Instagram">
                 <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
