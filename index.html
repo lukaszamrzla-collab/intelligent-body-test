@@ -111,6 +111,15 @@
         @media (max-width: 768px) {
             footer { padding-bottom: 80px; }
         }
+    <style>
+      @keyframes wave {
+        0% { transform: translateX(0); }
+        50% { transform: translateX(-25%); }
+        100% { transform: translateX(0); }
+      }
+      .animate-wave {
+        animation: wave 18s ease-in-out infinite;
+      }
     </style>
 </head>
 <body class="selection-theme text-[#48596b] bg-[#efeae4] min-h-screen font-sans">
@@ -224,7 +233,11 @@
             <a href="#book" class="bg-[#48596b] text-[#efeae4] px-8 py-4 rounded-full tracking-widest uppercase text-xs font-bold hover:bg-[#7a90a8] transition-all w-full sm:w-auto text-center">Start Your Journey</a>
             <a href="#academy" class="bg-transparent border border-[#a68a69] text-[#a68a69] px-8 py-4 rounded-full tracking-widest uppercase text-xs hover:bg-[#a68a69]/10 transition-all w-full sm:w-auto text-center font-bold">Teacher Training</a>
         </div>
-    </div>
+        <div class="absolute bottom-0 left-0 w-full overflow-hidden leading-none z-0 opacity-40 pointer-events-none">
+            <svg class="relative block w-[200%] h-[100px] md:h-[140px] animate-wave" viewBox="0 0 1200 120" preserveAspectRatio="none">
+                <path d="M0,0 C150,90 350,-40 500,60 C650,160 900,10 1200,40 L1200,120 L0,120 Z" fill="#a68a69"></path>
+            </svg>
+        </div>
 </section>
 
 <!-- Teacher Training Section -->
